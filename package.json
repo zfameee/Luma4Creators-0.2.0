@@ -1,0 +1,42 @@
+{
+  "name": "luma4creators",
+  "version": "0.2.0",
+  "description": "Luma4Creators Minecraft launcher for Windows",
+  "main": "main.js",
+  "author": "LumaLabs",
+  "license": "MIT",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --win nsis"
+  },
+  "devDependencies": {
+    "electron": "^37.2.6",
+    "electron-builder": "^26.0.12"
+  },
+  "build": {
+    "appId": "pro.lumalabs.luma4creators",
+    "productName": "Luma4Creators",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "main.js",
+      "index.html",
+      "preload.js",
+      "node_modules/**/*"
+    ],
+    "win": {
+      "target": [
+        "nsis"
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true
+    }
+  },
+  "dependencies": {
+    "minecraft-launcher-core": "^3.18.0"
+  }
+}
